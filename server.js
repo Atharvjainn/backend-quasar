@@ -32,6 +32,11 @@ if (!GITHUB_TOKEN || !GITHUB_ORG) {
  * }
  */
 
+app.get("/health", (req, res) => {
+  res.status(200).send("OK");
+});
+
+
 app.post("/commit-count", async (req, res) => {
   const { repos } = req.body;
 
